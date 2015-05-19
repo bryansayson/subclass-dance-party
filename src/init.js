@@ -35,12 +35,25 @@ $(document).ready(function(){
   $(".lineUp").on("click", function(){
     var totalH = 0;
     var maxWidth = 0;
-    for(var i =0; i < window.dancers.length; i++){
-      if(i === 0) {
-        window.dancers[i].setPosition(50,0);
-      }else{
-        window.dancers[i].setPosition(window.dancers[i-1].getPosition().top + window.dancers[i-1].$node.outerHeight(), 0);
+    var columnPosition = 0;
+    var rowPosition = 0;
+    for (var i =0; i < window.dancers.length; i++) {
+      totalH += window.dancers[i].$node.outerHeight();
+      if ( window.dancers[i].$node.outerWidth() > maxWidth ) {
+        maxWidth = window.dancers[i].$node.outerWidth();
       }
+        if(i === 0) {
+          window.dancers[i].setPosition(50,columnPosition);
+        } else {
+          if ( totalH > $("body").height() ) {
+            columnPosition += maxWidth;
+            totalH = 0;
+            maxWidth = 0;
+            window.dancers[i].setPosition(50,columnPosition);
+          } else {
+            window.dancers[i].setPosition(window.dancers[i-1].getPosition().top + window.dancers[i-1].$node.outerHeight(), columnPosition);
+          }
+        }
     }
   });
 });
