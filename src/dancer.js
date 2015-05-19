@@ -13,24 +13,24 @@ function Dancer (top, left, timeBetweenSteps){
 
 }
 
-  Dancer.prototype.step = function(){
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
-    var dancer = this;
-    console.log(dancer);
-    setTimeout( function () {
-      console.log("invoking step");
-      dancer.step();
-    }, this._timeBetweenSteps);
-  };
+Dancer.prototype.step = function(){
+  // the basic dancer doesn't do anything interesting at all on each step,
+  // it just schedules the next step
+  var dancer = this;
 
-  Dancer.prototype.setPosition = function(top, left){
-    // Use css top and left properties to position our <span> tag
-    // where it belongs on the page. See http://api.jquery.com/css/
-    //
-    var styleSettings = {
-      top: top,
-      left: left
-    };
-    this.$node.css(styleSettings);
+  setTimeout( function () {
+    dancer.step();
+  }, this._timeBetweenSteps);
+};
+
+Dancer.prototype.setPosition = function(top, left){
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var styleSettings = {
+    top: top,
+    left: left
   };
+  this.$node.css(styleSettings);
+};
+

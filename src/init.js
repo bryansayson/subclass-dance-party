@@ -28,6 +28,18 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+
+  $(".lineUp").on("click", function(){
+    for(var i =0; i < window.dancers.length; i++){
+      if(i === 0) {
+        window.dancers[i].setPosition(0,0);
+      }else{
+        window.dancers[i].setPosition(window.dancers[i-1].$node.width(), 0);
+      }
+    }
   });
 });
 

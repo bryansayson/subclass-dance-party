@@ -8,6 +8,9 @@ body{
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  background-image: url("img/dancefloor.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -25,3 +28,18 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.ghost {
+  position:absolute;
+}
+
+.pacman {
+  width: 60px;
+  position:absolute;
+}
+
+/*
+body {
+    background-image: url("paper.gif");
+    background-color: #cccccc;
+}*/
