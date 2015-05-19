@@ -5,7 +5,9 @@ var HulkDancer = function(top, left, timeBetweenSteps){
   // so we must keep a copy of the old version of this function
   this.$node.css({
     "border": "15px solid green",
-    "border-radius": "10px"
+    "border-radius": "10px",
+    "height": "15px",
+    "width": "15px"
   });
 };
 

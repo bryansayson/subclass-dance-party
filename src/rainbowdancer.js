@@ -4,8 +4,10 @@ var RainbowDancer = function(top, left, timeBetweenSteps){
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
   this.$node.css({
-    "border": "15px solid white",
-    "border-radius": "10px"
+    "border": "25px solid white",
+   "border-radius": "20px",
+    "height": "2.5px",
+    "width": "2.5px"
   });
 };
 
@@ -25,7 +27,7 @@ RainbowDancer.prototype.step = function(){
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
     this.$node.css({
-      "border": "15px solid #" + randomColor,
+      "border": "25px solid #" + randomColor,
       "border-radius": newSize+"px"
     });
 };
