@@ -9,6 +9,9 @@ var GhostDancer = function(top, left, timeBetweenSteps){
     "position" : "absolute"
   });
   this.setPosition(top, left);
+  this.$node.on("mouseover", function(){
+    $(this).hide();
+  });
 };
 
 GhostDancer.prototype = Object.create(Dancer.prototype);

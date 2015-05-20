@@ -60,15 +60,5 @@ $(document).ready(function(){
       lastElementDestination = window.dancers[i].getPosition().top + window.dancers[i].$node.outerHeight()
     }
   });
-
-  // $(".ghost").on("mouseenter", function () {
-  //   $(this).hide();
-  // });
-
-$(".ghost").hover( function () {
-    $(this).hide();
-  });
-
-
 });
 

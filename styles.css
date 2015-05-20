@@ -16,10 +16,12 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
   background-color: black;
+  font-family: 'Lato';
 }
 .lineUp {
   padding:5px 12px;
   float:right;
+  font-family: 'Lato';
 }
 .topbar {
   height:35px;
