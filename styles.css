@@ -15,10 +15,15 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+  background-color: black;
 }
-.topbar{
-  height:32px;
-  background-color: #555;
+.lineUp {
+  padding:5px 12px;
+  float:right;
+}
+.topbar {
+  height:35px;
+  background-color: black;
 }
 .title{
   background-color: #777;
@@ -36,6 +41,10 @@ body, a:link, a:visited, a:active{
 .pacman {
   width: 60px;
   position:absolute;
+}
+
+audio {
+  margin: 0 auto;
 }
 
 /*.rainbow {
