@@ -24,8 +24,8 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:20px solid white;
+  border-radius:20px;
   position:absolute;
 }
 
@@ -38,6 +38,13 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+/*.rainbow {
+    border: 25px solid white;
+    border-radius : 20px;
+    height: 2.5px;
+    width: 2.5px;
+  }
+*/
 /*
 body {
     background-image: url("paper.gif");

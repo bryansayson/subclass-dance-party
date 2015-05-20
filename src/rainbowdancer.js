@@ -5,7 +5,7 @@ var RainbowDancer = function(top, left, timeBetweenSteps){
   // so we must keep a copy of the old version of this function
   this.$node.css({
     "border": "25px solid white",
-   "border-radius": "20px",
+    "border-radius": "20px",
     "height": "2.5px",
     "width": "2.5px"
   });

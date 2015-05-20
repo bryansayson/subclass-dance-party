@@ -19,31 +19,22 @@ Dancer.prototype.step = function(){
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   var dancer = this;
-  var potentials;
-  if ( dancer.partner === null ) {
-    potentials = this.nearMe(5).filter(function(dancer){
-      return dancer.partner === null;
-    });
 
-    if(potentials.length){
-      //if within radius of 50px - partner up
-      if ( this.distaceTo(potentials[0]) < 50 ) {
-      dancer.pairUp( potentials[0] );
-
-      }
-      //else move towards them
-
-
-    } else{
-
-      //move randomly
-
-    }
-  }
 
   setTimeout( function () {
     dancer.step();
   }, this._timeBetweenSteps);
+};
+
+Dancer.prototype.moveTowardsCenter = function(){
+
+};
+
+Dancer.prototype.moveTo = function( top, left ) {
+  this.$node.animate({
+    top: top,
+    left: left
+  }, this._timeBetweenSteps*0.9);
 };
 
 Dancer.prototype.distanceTo = function( otherDancer ) {
@@ -88,12 +79,32 @@ Dancer.prototype.lineUp = function( top, left ) {
   this.setPosition(top, left);
 };
 
-Dancer.prototype.dancersNearMe = function( top, left ) {
-  this.setPosition(top, left);
-};
-
 Dancer.prototype.pairUp = function( pairedDancer ) {
-
-  this.setPosition(top, left);
-  dancer.partner = pairedDancer;
+  this.partner = pairedDancer;
+  pairedDancer.partner = this;
+  pairedDancer.setPosition(this.getPosition().top+this.$node.outerLength(), this.getPosition().left+this.$node.outerWidth());
 };
+
+/*
+  var dancer = this;
+  var potentials;
+
+  if ( dancer.partner === null ) {
+    potentials = this.nearMe(5).filter(function(dancer){
+      return dancer.partner === null;
+    });
+
+    if(potentials.length){
+      //if within radius of 50px - partner up
+      if ( this.distaceTo(potential[0]) < 150 ) {
+          dancer.pairUp( potentials[0] );
+      }
+
+      //else move towards them
+    } else {
+      //move towards the center of the dancefloor
+
+
+    }
+  }
+*/
